@@ -1,0 +1,233 @@
+<!--
+Nathan Engel
+IS 201
+Final Project
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href=".//css/scratch.css">
+   
+    <style>
+        #viz1713769651043 {
+            position: relative;
+            width: 100%;
+            max-width: 100%; 
+            margin: 0 auto;
+            text-align: center;
+        }
+        .tableauViz {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+<nav>
+    <a href="index.html" id="top">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="post.html">Info</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="#">Resume</a> <br>
+</nav>
+
+    <h1>Resume</h1><br>
+
+    <img src="Headshot.JPG" height="200" alt="Nathan Engel Profile Image">
+    <h3>Nathan Engel</h3>
+    1111 N 2222 S <br>
+    Provo, UT <br>
+    84604<br><br><br>
+
+        <a href="#edu">Education</a><br>
+        <a href="#exp">Experience</a><br>
+        <a href="#ski">Skills</a> <br><br><br>
+   
+        Full time student at Brigham Young University.
+
+   <P>Mission Statement: My goal is to become a finance professional.</P> 
+   <p>&nbsp</p>
+   <p>&nbsp</p>
+   <ol>
+        <li id="edu" class="resumelistheading">Education
+            <ul>
+                <li>Berryville High School</li>
+                <li>Brigham Young University</li>
+            </ul>
+        </li><br>
+        
+        <li id="exp" class="resumelistheading">Experience
+            <ul>
+                <li>Ranch Hand</li>
+                <li>Carpentry</li>
+                <li>Retail Associate</li>
+                <li>Maintenance</li>
+            </ul>
+        </li><br>
+
+        <li id="ski" class="resumelistheading">Skills
+            <ul>
+                <li>Database design development</li>
+                <li>Entity-Relationship Diagramming</li>
+                <li>Structured Query Language</li>
+                <li>Tableau</li>
+                <li>Excel Solver, Pivot Tables, and Charts</li>
+                <li>HTML, CSS, Bootstrap</li>
+                <li>Flow Chart Diagramming</li>
+                <li>Visual Basic for Applications (VBA) Programming in Excel</li>
+            </ul>
+        </li>
+   </ol>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+
+
+   <h1>Where in the world are you?</h1>
+
+    <p>Click the button below to find your coordinates:</p>
+
+    <button onclick="getLocation()">Get My Location</button>
+
+    <p id="locationResult"></p>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('locationResult').innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var accuracy = position.coords.accuracy;
+
+            document.getElementById('locationResult').innerHTML = `
+                Latitude: ${latitude}<br>
+                Longitude: ${longitude}<br>
+                Accuracy: ${accuracy} meters
+            `;
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('locationResult').innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('locationResult').innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('locationResult').innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('locationResult').innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+
+   <div class='tableauPlaceholder' id='viz1713769651043' style='position: relative; width: 100%;'>
+    <noscript>
+        <a href='#'>
+            <img alt='Timeline' src='https://public.tableau.com/static/images/BY/BYUAlumniintheSuperBowl_16437567503580/Timeline/1_rss.png' style='border: none;' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display: none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='BYUAlumniintheSuperBowl_16437567503580/Timeline' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/BY/BYUAlumniintheSuperBowl_16437567503580/Timeline/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+    </object>
+</div>
+
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1713769651043');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+
+    function resizeViz() {
+        var width = divElement.offsetWidth;
+        var customWidth = Math.min(width, 2000); 
+        var customHeight = customWidth * (1000 / 2000); 
+        vizElement.style.width = customWidth + 'px';
+        vizElement.style.height = customHeight + 'px';
+        vizElement.style.margin = '0 auto';
+    }
+    resizeViz();
+    window.addEventListener('resize', resizeViz);
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+
+            
+
+ <p>
+    <iframe width="450" height="245" src="https://www.youtube.com/embed/s89hEN-163E" frameborder="0" allowfullscreen> target="_blank">youtube video.</iframe>
+ </p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+
+ <a href="#top">Back to Top</a>
+</body>
+</html>
